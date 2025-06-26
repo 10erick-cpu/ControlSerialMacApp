@@ -26,7 +26,7 @@ jobs:
         pyinstaller main.spec
 
     - name: Upload .app bundle
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ControlSerialMacApp
         path: dist/ControlSerialMacApp.app
