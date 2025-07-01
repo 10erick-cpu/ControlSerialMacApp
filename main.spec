@@ -1,10 +1,12 @@
 # -*- mode: python ; coding: utf-8 -*-
+import sys
+import os
 
 block_cipher = None
 
 a = Analysis(
     ['main.py'],
-    pathex=[],
+    pathex=[os.path.dirname(os.path.abspath(__file__))],  # Ruta correcta siempre
     binaries=[],
     datas=[],
     hiddenimports=['cv2', 'serial'],
@@ -34,6 +36,7 @@ exe = EXE(
 app = BUNDLE(
     exe,
     name='ControlSerialMacApp.app',
-    icon=None,
+    icon=None,  # Puedes agregar un icono aquí si quieres
     bundle_identifier='com.erick.controlserial',
 )
+
